@@ -19,7 +19,11 @@ app.get('/consulta-cep/:cep', async (req,res)=> {
     try{
         const cepRegex = /^[0-9]{5}-?[0-9]{3}$/;
         if(!cepRegex.test(cep)){
+<<<<<<< HEAD
             res.status(400).send('CEP invalidp');
+=======
+            res.status(400).send("CEP inválido. Formato: XXXXX-XXX");
+>>>>>>> eb44a291529ade9f142ab6bed043d4a9b611a1b2
             return;
         }
         const response = await axio.get(`http://viacep.com.br/ws/${cep}/json/`);
